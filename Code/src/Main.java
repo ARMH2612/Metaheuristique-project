@@ -14,5 +14,8 @@ public class Main {
         graph.addArc(2,3);
         graph.addArc(3,4);
         graph.printGraph();
+
+        BFS bfs = new BFS(0,graph);
+        bfs.implementation(9);
     }
 }

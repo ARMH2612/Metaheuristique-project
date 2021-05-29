@@ -22,6 +22,13 @@ public class Graph {
         adjacencyList.get(origin).add(destination);
     }
 
+    LinkedList get(int index){
+        return adjacencyList.get(index);
+    }
+    public int size(){
+        return adjacencyList.size();
+    }
+
 void printGraph(){
     for (Map.Entry m :adjacencyList.entrySet()){
         System.out.println(m.getKey()+" : "+m.getValue());
