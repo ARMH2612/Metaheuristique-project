@@ -1,7 +1,11 @@
 
 public class Main {
     public static  void main(String args[]){
-        Graph graph = new Graph(4);
+        Graph graph = new Graph();
+        graph.addNode(0);
+        graph.addNode(1);
+        graph.addNode(2);
+        graph.addNode(3);
 
         graph.addArc(0,1);
         graph.addArc(0,2);

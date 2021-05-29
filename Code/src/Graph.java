@@ -1,28 +1,30 @@
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Map;
 
 public class Graph {
     private int nbNode; // number of nodes.
-    private LinkedList<Integer> adjacencyList[]; // representaion of the graph as an adjacency list.
+    private Map<Integer,LinkedList> adjacencyList; // representaion of the graph as an adjacency list.
 
-    public Graph(int nbNode){
+    public Graph(){
         this.nbNode = nbNode;
-        this.adjacencyList = new LinkedList[nbNode];
-        for (int i = 0; i < nbNode; i++) {
-            this.adjacencyList[i] = new LinkedList();
-            this.adjacencyList[i].add(i);
-        }
+        this.adjacencyList = new HashMap();
+
     }
 
+    void addNode(int i){
+        this.adjacencyList.put(i, new LinkedList<>());
+    }
 
     void addArc(int origin, int destination){
         // adding an arc between the origin and destination " adding destination to origin's list"
-        adjacencyList[origin].add(destination);
+        adjacencyList.get(origin).add(destination);
     }
 
 void printGraph(){
-    for (int i = 0; i < this.nbNode; i++) {
-        System.out.println(this.adjacencyList[i]);
+    for (Map.Entry m :adjacencyList.entrySet()){
+        System.out.println(m.getKey()+" : "+m.getValue());
     }
 }
 }
