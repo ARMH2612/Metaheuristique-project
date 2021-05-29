@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="50b1e028-fe63-4e1c-994b-801f18e4f7d0" name="Default Changelist" comment="Changing LinkedList by Map">
-      <change afterPath="$PROJECT_DIR$/src/BFS.java" afterDir="false" />
+    <list default="true" id="50b1e028-fe63-4e1c-994b-801f18e4f7d0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/DFS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Code/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Graph.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Code/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Code/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,6 +27,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../meta-heuristique" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -81,7 +80,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622279441681</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="implementing BFS search">
+      <created>1622285322804</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1622285322804</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -98,6 +104,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2nd commit" />
     <MESSAGE value="Changing LinkedList by Map" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changing LinkedList by Map" />
+    <MESSAGE value="implementing BFS search" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementing BFS search" />
   </component>
 </project>
