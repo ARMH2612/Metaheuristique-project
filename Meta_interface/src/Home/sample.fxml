@@ -53,27 +53,84 @@
             <Button fx:id="chose_file" layoutX="254.0" layoutY="82.0" mnemonicParsing="false" onAction="#chooseFile_pressed" text="Choisir" />
             <CheckBox fx:id="chk_ifSat" layoutX="20.0" layoutY="124.0" mnemonicParsing="false" text="SAT" />
             <TextField fx:id="text_nbr_var" layoutX="66.0" layoutY="120.0" prefHeight="25.0" prefWidth="34.0" />
-            <Text layoutX="105.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nbr variable" />
-            <TextField fx:id="text_nbr_clause" layoutX="171.0" layoutY="120.0" prefHeight="25.0" prefWidth="34.0" />
-            <Text layoutX="210.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nbr clause" />
-            <Separator layoutX="319.0" layoutY="4.0" orientation="VERTICAL" prefHeight="181.0" prefWidth="7.0" />
-            <TableView fx:id="tabV_clause" layoutX="329.0" layoutY="4.0" prefHeight="181.0" prefWidth="257.0">
+            <Text layoutX="105.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nbr variable">
+               <font>
+                  <Font size="10.0" />
+               </font></Text>
+            <TextField fx:id="text_nbr_clause" layoutX="174.0" layoutY="120.0" prefHeight="25.0" prefWidth="45.0" />
+            <Text layoutX="224.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nbr clause">
+               <font>
+                  <Font size="10.0" />
+               </font></Text>
+            <Separator layoutX="369.0" layoutY="4.0" orientation="VERTICAL" prefHeight="181.0" prefWidth="7.0" />
+            <TableView fx:id="tabV_clause" layoutX="379.0" layoutY="4.0" prefHeight="181.0" prefWidth="207.0">
               <columns>
-                <TableColumn fx:id="tabCol_clause" prefWidth="256.0" text="Clause" />
+                <TableColumn fx:id="tabCol_clause" prefWidth="206.0" text="Clause" />
               </columns>
             </TableView>
-            <Button fx:id="run" layoutX="174.0" layoutY="150.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="126.0" text="Run" />
+            <Button fx:id="run" layoutX="61.0" layoutY="153.0" mnemonicParsing="false" onAction="#run_press" prefHeight="25.0" prefWidth="207.0" style="-fx-background-color: #48a868;" text="Tester" textFill="WHITE" />
             <Label layoutX="20.0" layoutY="86.0" text="Fichier CNF" />
-            <Button fx:id="genere_clauses_btn" layoutX="40.0" layoutY="150.0" mnemonicParsing="false" onAction="#genere_clauses_pressed" text="Genere clauses" />
+            <Button fx:id="genere_clauses_btn" layoutX="277.0" layoutY="121.0" mnemonicParsing="false" onAction="#genere_clauses_pressed" prefHeight="25.0" prefWidth="85.0" text="Genere clauses">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
-      <BarChart layoutX="50.0" layoutY="273.0">
+      <BarChart fx:id="bar_graph" layoutX="184.0" layoutY="267.0" prefHeight="390.0" prefWidth="395.0">
         <xAxis>
-          <CategoryAxis side="BOTTOM" />
+          <CategoryAxis fx:id="algo" side="BOTTOM" />
         </xAxis>
         <yAxis>
-          <NumberAxis side="LEFT" />
+          <NumberAxis fx:id="temps" label="Temps d'execustion (s)" side="LEFT" />
         </yAxis>
       </BarChart>
+      <Pane layoutX="20.0" layoutY="318.0" prefHeight="96.0" prefWidth="155.0" style="-fx-background-color: #f2f2f2;">
+         <children>
+            <Label layoutX="70.0" layoutY="13.0" text="A*">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Separator layoutX="9.0" layoutY="48.0" prefHeight="3.0" prefWidth="136.0" />
+            <Label fx:id="a_star_temps" layoutX="73.0" layoutY="63.0" text="0">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="20.0" layoutY="428.0" prefHeight="96.0" prefWidth="155.0" style="-fx-background-color: #f2f2f2;">
+         <children>
+            <Label layoutX="65.0" layoutY="13.0" text="BFS">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Separator layoutX="9.0" layoutY="48.0" prefHeight="3.0" prefWidth="136.0" />
+            <Label fx:id="bfs_temps" layoutX="73.0" layoutY="64.0" text="0">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="20.0" layoutY="538.0" prefHeight="96.0" prefWidth="155.0" style="-fx-background-color: #f2f2f2;">
+         <children>
+            <Label layoutX="65.0" layoutY="13.0" text="DFS">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Separator layoutX="9.0" layoutY="48.0" prefHeight="3.0" prefWidth="136.0" />
+            <Label fx:id="dfs_temps" layoutX="73.0" layoutY="62.0" text="0">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="20.0" layoutY="282.0" text="Temps d'excution des Algorithmes :" />
+      <Separator layoutX="22.0" layoutY="304.0" prefHeight="3.0" prefWidth="189.0" />
    </children>
 </AnchorPane>

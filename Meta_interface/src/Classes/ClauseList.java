@@ -1,6 +1,7 @@
 package Classes;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.Stack;
 
 public class ClauseList extends ArrayList<Clause> {
@@ -13,7 +14,7 @@ public class ClauseList extends ArrayList<Clause> {
 		this.n = n;
 		this.m = m;
 	}
-	
+
 	public int getN() {
 		return n;
 	}
@@ -26,14 +27,14 @@ public class ClauseList extends ArrayList<Clause> {
 	public void setM(int m) {
 		this.m = m;
 	}
-	
+
 	public ClauseList gen_aleat(boolean sat, int taille_clause) {
 		if (taille_clause > m)
 			throw new IndexOutOfBoundsException("ne peut remplir une clause avec une taille = "+ taille_clause+" > nbr variables = "+ m);
 		else if (taille_clause <= 0) {
 			return null;
 		}
-		
+
 		if (sat) { // il ya une solution S tq dans chaque clause, on doit avoir au moins un x qui est dans S
 			Solution solution = Solution.gen_alea(m);
 			for (int i = 0; i < n; i++) {
@@ -52,21 +53,27 @@ public class ClauseList extends ArrayList<Clause> {
 			}
 			int [] X_ = var_subset(taille_clause);
 			Stack<Clause> ouvert = new Stack<>();
-			ouvert.add(new Clause()); // inserer une clause vide 
+			ouvert.add(new Clause()); // inserer une clause vide
+			int count_clauses = 0;
 			for (int x : X_) {
 				Stack<Clause> new_ouvert = new Stack<>();
 				while (ouvert.size() > 0) {
 					Clause c = ouvert.pop();
 					new_ouvert.add(c.extend(x));
 					new_ouvert.add(c.extend(-x));
+					count_clauses+=1;
 				}
 				ouvert = new_ouvert;
 			}
 			this.addAll(ouvert);
+			// complete with random clauses until number of clauses reached
+			for (int i = count_clauses+1; i < n; i++) {
+				this.add(new Clause().completer_aleatoirement(taille_clause, m));
+			}
 		}
 		return this;
 	}
-	
+
 	private ClauseList random_ClauseList(int taille_clause) {
 		for (int i = 0; i < n; i++) {
 			Clause clause = new Clause();
